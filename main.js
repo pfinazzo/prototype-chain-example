@@ -101,14 +101,18 @@ var example = new Bottom();
 // example.sayName(); // console.logs -> "top level"
 example.sayName() // "patrick"
 Object.prototype.sayHello = () => "hello"; // attach prototype method higher up the chain
+console.log(example.sayHello()); // outputs "hello"
 
-console.dir(example.__proto__.__proto__.__proto__.__proto__.sayHello());
+// this is what really happens
 /*
-  1. example checks itself first
-  2. example checks to see if it has a prototype
-  3. example finds no prototype so it checks its __proto__
-  4. checks example.__proto__.__proto__
-  5. checks example.__proto__.__proto__.__proto__
-  6. finds it on example.__proto__.__proto__.__proto__.__proto__ aka Object.prototype
-  7. runs sayHello function
+1. example checks itself first
+2. example checks to see if it has a prototype
+3. example finds no prototype so it checks its __proto__
+4. checks example.__proto__.__proto__
+5. checks example.__proto__.__proto__.__proto__
+6. finds it on example.__proto__.__proto__.__proto__.__proto__ aka Object.prototype
+7. runs sayHello function
 */
+
+// so its being ran from here
+// console.dir(example.__proto__.__proto__.__proto__.__proto__.sayHello());
