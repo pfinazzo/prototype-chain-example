@@ -103,12 +103,15 @@ var example = new Bottom();
 // example.sayName(); // console.logs -> "top level"
 example.sayName() // "patrick"
 Object.prototype.sayHello = () => "hello"; // attach prototype method higher up the chain
-console.log(example.sayHello()); // outputs "hello"
 
 // again we really should be using Object.getPrototypeOf 
-console.log(Object.getPrototypeOf(example) === example.constructor.prototype);
+console.log(Object.getPrototypeOf(example) === example.constructor.prototype); // true
+console.log(example.__proto__ === example.constructor.prototype); // true
+console.log(Object.getPrototypeOf(example) === example.__proto__) // true
 
 
+
+console.log(example.sayHello()); // outputs "hello"
 // this is what really happens
 /*
 1. example checks itself first
