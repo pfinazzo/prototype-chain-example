@@ -41,7 +41,7 @@ require('express')().listen(3000)
         obj.__proto__ is the same as Object.prototype or obj.constructor.prototype because obj.constructor === Object   
  */
 // console.log(obj.__proto__ === Object.prototype) // true
-// console.dir(Function.prototype === Object.prototype.__proto__) // null
+// console.dir(Object.prototype.__proto__) // null
 
 class Top {
   constructor(){
