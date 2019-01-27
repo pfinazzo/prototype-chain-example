@@ -1,6 +1,8 @@
 /* 
   This is meant as a guide to understanding JavaScripts Prototypal inheritance 
   Here we have applied it with some of JS's syntactic sugar for constructor functions ES6 classes
+  
+  Note: We are using __proto__ but this is actually deprecated, and the suggested way of accessing an objects __proto__ would be Object.getPrototypeOf(obj.constructor)
 */ 
 
 
@@ -101,7 +103,11 @@ var example = new Bottom();
 // example.sayName(); // console.logs -> "top level"
 example.sayName() // "patrick"
 Object.prototype.sayHello = () => "hello"; // attach prototype method higher up the chain
-console.log(example.sayHello()); // outputs "hello"
+console.log(example.constructor.prototype); // outputs "hello"
+
+// again we really should be using Object.getPrototypeOf 
+console.log(Object.getPrototypeOf(example) === example.__proto__);
+
 
 // this is what really happens
 /*
