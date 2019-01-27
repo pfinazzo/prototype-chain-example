@@ -103,10 +103,10 @@ var example = new Bottom();
 // example.sayName(); // console.logs -> "top level"
 example.sayName() // "patrick"
 Object.prototype.sayHello = () => "hello"; // attach prototype method higher up the chain
-console.log(example.constructor.prototype); // outputs "hello"
+console.log(example.constructor.prototype.sayHello()); // outputs "hello"
 
 // again we really should be using Object.getPrototypeOf 
-console.log(Object.getPrototypeOf(example) === example.__proto__);
+console.log(Object.getPrototypeOf(example) === example.constructor.prototype);
 
 
 // this is what really happens
