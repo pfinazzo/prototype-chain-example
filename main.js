@@ -98,7 +98,8 @@ var example = new Bottom();
 
 
 
-// Note: the lower you nest the inheritance the slower the performance, however JS's prototype chain is an implementation of a linked-list which makes it actually much faster because instead of making new copies of parent classes, instead it uses references 
+// Note: the lower you nest the inheritance the slower the performance
+// JS's prototype chain is an implementation of a linked-list which makes it actually much faster than traditional inheritance because instead of making new copies of parent classes, instead it just references it 
 
 // example.sayName(); // console.logs -> "top level"
 example.sayName() // "patrick"
