@@ -1,4 +1,3 @@
-require('express')().listen(3000)
 /* 
   This is meant as a guide to understanding JavaScripts Prototypal inheritance 
   Here we have applied it with some of JS's syntactic sugar for constructor functions ES6 classes
